@@ -11,35 +11,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-})->name('index');
+Route::get('/', 'PagesController@home')->name('home');
 
-Route::get('/about', function () {
-    return view('pages.about');
-})->name('about');
+//Route::get('/', 'PagesController@index')->name('index');
 
-Route::get('/contact', function () {
-    return view('pages.contact');
-})->name('contact');
+Route::get('/about', 'PagesController@about')->name('about');
 
-Route::get('/register', function () {
-    return view('auth.register');
-})->name('register');
+Route::get('/contact', 'PagesController@contact')->name('contact');
 
-Route::get('/home', function () {
-    return view('pages.home');
-})->name('home');
+//Route::get('/register', 'PagesController@register')->name('register');
 
-Route::post('/contact', function () {
+
+/*Route::post('/contact', function () {
 
     $data = request()->all();
 
         echo "Email: " . $data['email'] . '<br>';
         echo "Body: " . $data['body'];
 
-});
+}); */
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
