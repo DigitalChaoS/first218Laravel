@@ -13,19 +13,23 @@
 
 Route::get('/', function () {
     return view('pages.index');
-});
+})->name('index');
 
 Route::get('/about', function () {
     return view('pages.about');
-});
+})->name('about');
 
 Route::get('/contact', function () {
     return view('pages.contact');
-});
+})->name('contact');
 
 Route::get('/register', function () {
     return view('auth.register');
-});
+})->name('register');
+
+Route::get('/home', function () {
+    return view('pages.home');
+})->name('home');
 
 Route::post('/contact', function () {
 
