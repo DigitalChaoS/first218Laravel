@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\User;
 
 class UserTest extends TestCase
 {
@@ -15,6 +16,7 @@ class UserTest extends TestCase
      */
     public function testExample()
     {
-        $this->assertTrue(true);
-    }
+        $user = User::find(1);
+        $this->assertInternalType('int',$user->id);
+        }
 }
